@@ -13,8 +13,8 @@ global:
   num_classes: 1
   data_path: ./data/
   number_of_bands: 3
-  # Model available: unet, unetsmall, checkpointed_unet, ternausnet, fcn_resnet101, deeplabv3_resnet50, deeplabv3_resnet101
-  model_name: unet
+  # Model available: unet, segnet, unetsmall, checkpointed_unet, ternausnet, fcn_resnet101, deeplabv3_resnet50, deeplabv3_resnet101
+  model_name: segnet
   mlflow_uri: #path/to/mlflow_tracking_uri  # Default to ./mlruns
   bucket_name:   # name of the S3 bucket where data is stored. Leave blank if using local files
   task: segmentation  # Task to perform. Either segmentation or classification
@@ -62,7 +62,7 @@ training:
   num_val_samples: 
   num_tst_samples: 
   batch_size: 4
-  num_epochs: 15
+  num_epochs: 2
   target_size: 64
   # Loss function available: CrossEntropy, Lovasz, Focal, OhemCrossEntropy 
   #                          (*Lovasz for segmentation tasks only)
@@ -112,7 +112,7 @@ training:
 # Inference parameters; used in inference.py --------
 inference:
   img_dir_or_csv_file: ./data/images_to_samples_ci_csv.csv #/path/to/csv/containing/images/list.csv
-  state_dict_path: /Users/matt/Documents/geo-deep-learning/data/samples64_overlap15_min-annot0_3bands/model/config_template/checkpoint.pth.tar #/path/to/model/weights/for/inference/checkpoint.pth.tar
+  state_dict_path: ./data/samples64_overlap15_min-annot0_3bands/model/config_template/checkpoint.pth.tar #/path/to/model/weights/for/inference/checkpoint.pth.tar
   chunk_size: 64 # (int) Size (height and width) of each prediction patch. Default: 512
   overlap: 10 # (int) Percentage of overlap between 2 chunks. Default: 10
   heatmaps: True
