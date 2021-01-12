@@ -15,4 +15,3 @@ tqdm
 matplotlib
 geopandas
 fiona
-segmentation_models_pytorch

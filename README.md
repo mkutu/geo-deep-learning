@@ -1,5 +1,3 @@
-# Forked from [NRCan](https://github.com/NRCan/geo-deep-learning)
-
 ### Table of Contents
 - [Geo-Deep-Learning overview](#Geo-Deep-Learning-overview)
   * [Requirements](#requirements)

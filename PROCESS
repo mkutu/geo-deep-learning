@@ -1,5 +1,0 @@
-#!/bin/bash
-
-python images_to_samples.py ./conf/config_template.yaml
-python train_segmentation.py ./conf/config_template.yaml
-python inference.py ./conf/config_template.yaml
