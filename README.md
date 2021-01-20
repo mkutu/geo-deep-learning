@@ -49,9 +49,14 @@ After installing the required computing environment (see next section), one need
 1. Using conda, you can set and activate your python environment with the following commands:  
     With GPU (defaults to CUDA 10.0 if `cudatoolkit=X.0` is not specified):
     ```shell
-    conda create -n gpu_ENV python=3.6 -c pytorch pytorch torchvision 
+    conda create -n gpu_ENV python=3.6 
     conda activate gpu_ENV
-    conda install -c conda-forge ruamel_yaml h5py fiona rasterio geopandas scikit-image scikit-learn tqdm 
+    conda install -c pytorch pytorch
+    conda install -c pytorch torchvision
+    conda install -c conda-forge segmentation-models-pytorch
+    conda install -c conda-forge geopandas
+    conda install -c conda-forge ruamel.yaml h5py fiona rasterio
+    conda install -c conda-forge scikit-image scikit-learn tqdm 
     conda install -c fastai nvidia-ml-py3
     conda install mlflow 
     ```
